@@ -29,7 +29,7 @@ public class App {
         System.out.println("Jakaś inna liczba niż 3 i 2");
       }
       // */
-    
+      /* // KALKULATOR + OPERATOR
       System.out.println("Wpisz pierwsza liczbe: ");
       int a = scanner.nextInt();
 
@@ -52,7 +52,7 @@ public class App {
         {
           System.out.println("Podales zly operator");
         }
-
+        */
         
 
     scanner.close();
