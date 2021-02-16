@@ -53,7 +53,39 @@ public class App {
           System.out.println("Podales zly operator");
         }
         */
-        
+      System.out.println("Wpisz pierwsza liczbe: ");
+      int a = scanner.nextInt();
+
+      System.out.println("Podaj operator (+,-,*,/,%): ");
+      scanner.nextLine();
+      String x = scanner.nextLine();
+
+      System.out.println("Wpisz druga liczbe: ");
+      int b = scanner.nextInt();
+
+        switch(x)
+        {
+          case "+":
+            System.out.println("wynik to: " +(a+b));
+            break;
+          case "-":
+            System.out.println("wynik to: " +(a-b));
+            break;
+          case "*":
+            System.out.println("wynik to: " +(a*b));
+            break;
+          case "/":
+            System.out.println("wynik to: " +(a/b));
+            break;
+          case "%":
+            System.out.println("wynik to: " +(a%b));
+            break;
+
+          default:
+            System.out.println("Podales zly operator");
+
+
+        }
 
     scanner.close();
   }
