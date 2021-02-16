@@ -1,5 +1,8 @@
 import java.util.Scanner;
 
+import javax.lang.model.util.ElementScanner6;
+import javax.swing.Spring;
+
 public class App {
     public static void main(String[] args) throws Exception {
       Scanner scanner = new Scanner(System.in);
@@ -27,9 +30,29 @@ public class App {
       }
       // */
 
-      /*
-        TO DODAŁEM TERAZ
-      */
+      System.out.println("Wpisz pierwsza liczbe: ");
+      int a = scanner.nextInt();
+
+      System.out.println("Podaj operator (+,-): ");
+      scanner.nextLine();
+      String x = scanner.nextLine();
+
+      System.out.println("Wpisz druga liczbe: ");
+      int b = scanner.nextInt();
+
+        if(x.equals("+"))
+        {
+          System.out.println("wynik to" +(a+b));
+        }
+        else if(x.equals("-"))
+        {
+          System.out.println("wynik to: " +(a-b));
+        }
+        else
+        {
+          System.out.println("Podales zly operator");
+        }
+
 
     scanner.close();
   }
