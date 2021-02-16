@@ -27,6 +27,9 @@ public class App {
       }
       // */
 
+      /*
+        TO DODAŁEM TERAZ
+      */
 
     scanner.close();
   }
