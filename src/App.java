@@ -1,6 +1,7 @@
 import java.util.Scanner;
 
 import javax.lang.model.util.ElementScanner6;
+import javax.print.DocFlavor.STRING;
 import javax.swing.Spring;
 
 public class App {
@@ -53,6 +54,9 @@ public class App {
           System.out.println("Podales zly operator");
         }
         */
+
+      /*
+        //User Input 
       System.out.println("Wpisz pierwsza liczbe: ");
       int a = scanner.nextInt();
 
@@ -86,7 +90,42 @@ public class App {
 
 
         }
+        */
 
+        // Zadeklaruj wartości
+        String[][] dane = {
+          {"Więcej niż jedno zwierzę","stado","klucz","dwa","owca","lama"},
+          {"Sporty na s","sztafeta","skok o tyczce", "skoki narciarskie", "sumo", "szachy"}
+        };
+        
+        int wynik = 0;   // zadeklaruj wynik
+    
+        for(int i = 0; i < dane.length; i++)   // Pętla wykonująca się tyle razy, ile jest pytań
+        {
+          System.out.println(dane[i][0]);   // Wyświetl pytanie (pierwszy element każdej tablicy)
+          String odp = scanner.nextLine();   // pobierz odpowiedź
+          boolean isAnswerCorect = false;
+          
+          for(int it = 1; it < dane[i].length; it++)   // Pętla sprawdzająca odpowiedzi 
+          {
+            
+            //System.out.println("ODP: "+dane[i][it]);   // Wyświetl każdą odpowiedź
+
+            if(dane[i][it].equals(odp))   // Sprawdź, czy odpowiedź użytkownika znajduje się w tablicy
+            {                             // ( za pomocą if )
+              System.out.println("BRZDEK!");
+              wynik += it*10;   // dodaj punkty do wyniku
+            }
+
+
+          }
+          if(!isAnswerCorect)
+          {
+            System.out.println("X");
+          }
+        }
+      
+        System.out.println("Twoj wynik to: " + wynik); // wyświetl wynik
     scanner.close();
   }
 }
