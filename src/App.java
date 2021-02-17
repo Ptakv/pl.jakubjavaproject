@@ -104,7 +104,7 @@ public class App {
         {
           System.out.println(dane[i][0]);   // Wyświetl pytanie (pierwszy element każdej tablicy)
           String odp = scanner.nextLine();   // pobierz odpowiedź
-          boolean isAnswerCorect = false;
+          boolean isAnswerCorrect = false;
           
           for(int it = 1; it < dane[i].length; it++)   // Pętla sprawdzająca odpowiedzi 
           {
@@ -113,13 +113,14 @@ public class App {
 
             if(dane[i][it].equals(odp))   // Sprawdź, czy odpowiedź użytkownika znajduje się w tablicy
             {                             // ( za pomocą if )
+              isAnswerCorrect = true;
               System.out.println("BRZDEK!");
               wynik += it*10;   // dodaj punkty do wyniku
             }
 
 
           }
-          if(!isAnswerCorect)
+          if(!isAnswerCorrect)
           {
             System.out.println("X");
           }
