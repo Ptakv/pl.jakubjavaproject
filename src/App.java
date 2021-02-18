@@ -8,10 +8,10 @@ public class App {
     public static void main(String[] args) throws Exception {
       Scanner scanner = new Scanner(System.in);
       /* // WPISYWANIE IMIENIA I WYŚWIETLANIE GO
-          System.out.println("Podaj swoje imię:");
-          String firstName = scanner.nextLine();
-          System.out.println("Twoje imię to " + firstName );
-          scanner.close();
+      System.out.println("Podaj swoje imię:");
+      String firstName = scanner.nextLine();
+      System.out.println("Twoje imię to " + firstName );
+      scanner.close();
       */
       /* // KALKULATOR DWÓCH LICZB 
       System.out.println("Podaj pierwszą liczbę");
@@ -30,7 +30,7 @@ public class App {
         System.out.println("Jakaś inna liczba niż 3 i 2");
       }
       // */
-      /* // KALKULATOR + OPERATOR
+      /* // KALKULATOR + OPERATOR v.1
       System.out.println("Wpisz pierwsza liczbe: ");
       int a = scanner.nextInt();
 
@@ -53,9 +53,8 @@ public class App {
         {
           System.out.println("Podales zly operator");
         }
-        */
-
-      /*
+      */
+      /* // KALKULATOR + OPERATORY v.2 [SWITCH]
         //User Input 
       System.out.println("Wpisz pierwsza liczbe: ");
       int a = scanner.nextInt();
@@ -90,43 +89,106 @@ public class App {
 
 
         }
-        */
-
-        // Zadeklaruj wartości
-        String[][] dane = {
-          {"Więcej niż jedno zwierzę","stado","klucz","dwa","owca","lama"},
-          {"Sporty na s","sztafeta","skok o tyczce", "skoki narciarskie", "sumo", "szachy"}
-        };
-        
-        int wynik = 0;   // zadeklaruj wynik
-    
-        for(int i = 0; i < dane.length; i++)   // Pętla wykonująca się tyle razy, ile jest pytań
-        {
-          System.out.println(dane[i][0]);   // Wyświetl pytanie (pierwszy element każdej tablicy)
-          String odp = scanner.nextLine();   // pobierz odpowiedź
-          boolean isAnswerCorrect = false;
-          
-          for(int it = 1; it < dane[i].length; it++)   // Pętla sprawdzająca odpowiedzi 
-          {
-            
-            //System.out.println("ODP: "+dane[i][it]);   // Wyświetl każdą odpowiedź
-
-            if(dane[i][it].equals(odp))   // Sprawdź, czy odpowiedź użytkownika znajduje się w tablicy
-            {                             // ( za pomocą if )
-              isAnswerCorrect = true;
-              System.out.println("BRZDEK!");
-              wynik += it*10;   // dodaj punkty do wyniku
-            }
-
-
-          }
-          if(!isAnswerCorrect)
-          {
-            System.out.println("X");
-          }
-        }
+      */
+      /* // FAMILIADA
+      // Zadeklaruj wartości
+      String[][] dane = {
+        {"Więcej niż jedno zwierzę","stado","klucz","dwa","owca","lama"},
+        {"Sporty na s","sztafeta","skok o tyczce", "skoki narciarskie", "sumo", "szachy"}
+      };
       
-        System.out.println("Twoj wynik to: " + wynik); // wyświetl wynik
-    scanner.close();
+      int wynik = 0;   // zadeklaruj wynik
+  
+      for(int i = 0; i < dane.length; i++)   // Pętla wykonująca się tyle razy, ile jest pytań
+      {
+        System.out.println(dane[i][0]);   // Wyświetl pytanie (pierwszy element każdej tablicy)
+        String odp = scanner.nextLine();   // pobierz odpowiedź
+        boolean isAnswerCorrect = false;
+        
+        for(int it = 1; it < dane[i].length; it++)   // Pętla sprawdzająca odpowiedzi 
+        {
+          
+          //System.out.println("ODP: "+dane[i][it]);   // Wyświetl każdą odpowiedź
+
+          if(dane[i][it].equals(odp))   // Sprawdź, czy odpowiedź użytkownika znajduje się w tablicy
+          {                             // ( za pomocą if )
+            isAnswerCorrect = true;
+            System.out.println("BRZDEK!");
+            wynik += it*10;   // dodaj punkty do wyniku
+          }
+
+
+        }
+        if(!isAnswerCorrect)
+        {
+          System.out.println("X");
+        }
+      }
+    
+      System.out.println("Twoj wynik to: " + wynik); // wyświetl wynik
+      */
+      /* // while + do...while
+      int nr = 0;
+      if(nr == 0)   
+      {
+        System.out.println("wykonało sie");
+      }
+
+      while(nr < 10)   //wykonuje sie dopóki warunek jest spełniony
+      {
+        System.out.println("wykonuje petle"+(nr-4));
+        nr++;
+      }
+      __________________________________________________________________
+      do
+      {
+        System.out.println("wykonuje sie z nr: "+(nr-4));
+        nr++;
+        if(nr == 4)
+        break;
+      }while(nr < 10);   //wykonuje sie raz przed sprawdzeniem warunku i dopoki warunek jest spełniony
+      __________________________________________________________________
+      do
+      {
+        System.out.println("prze continue");
+
+        if(nr == 4)
+        {
+          continue;
+        }
+
+        System.out.println("po continue");
+      }while(nr < 10);
+      */
+      int szansa = 1;
+      int randomNum = (int) (Math.random() * 101 ) + 1;
+       do
+       {
+        
+        System.out.println("wymyśliłem jedną liczbe naturalna 1-100. Jaka to liczba?");
+        int odp = scanner.nextInt();
+        szansa ++;
+        if(odp == randomNum)
+        {
+          System.out.println("Brawo! Zgadles!");
+        }
+        else if(odp < randomNum)
+        {
+          System.out.println("Myślałem nad wiekszą liczbą");
+        }
+        else if(odp > randomNum)
+        {
+          System.out.println("Myślałem nad mniejszą liczbą");
+        }
+
+        if(odp == randomNum)
+        {
+          break;
+        }
+       }while(szansa == 5);
+       
+
+
+
   }
 }
