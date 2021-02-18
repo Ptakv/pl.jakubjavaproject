@@ -162,10 +162,13 @@ public class App {
       */
       int szansa = 1;
       int randomNum = (int) (Math.random() * 101 ) + 1;
-       do
+
+      System.out.println("wymyśliłem jedną liczbe naturalna 1-100. Jaka to liczba?");
+
+       while(szansa < 6)
        {
         
-        System.out.println("wymyśliłem jedną liczbe naturalna 1-100. Jaka to liczba?");
+        
         int odp = scanner.nextInt();
         szansa ++;
         if(odp == randomNum)
@@ -181,11 +184,19 @@ public class App {
           System.out.println("Myślałem nad mniejszą liczbą");
         }
 
+        if(szansa == 6 && odp != randomNum)
+        {
+          System.out.println("Niestety nie udało ci sie :(");
+        }
+        
+
         if(odp == randomNum)
         {
           break;
         }
-       }while(szansa == 5);
+       }
+
+
        
 
 
